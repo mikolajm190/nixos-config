@@ -1,14 +1,15 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -82,7 +83,7 @@
   users.users.mikolajm = {
     isNormalUser = true;
     description = "mikolajm";
-    extraGroups = [ "networkmanager" "wheel" "podman" ];
+    extraGroups = ["networkmanager" "wheel" "podman"];
     packages = with pkgs; [
       librewolf
 
@@ -111,7 +112,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -123,6 +124,7 @@
     gcc
     python314
     podman-compose
+    alejandra
 
     nordic
     papirus-icon-theme
@@ -131,13 +133,13 @@
     (ollama.override {
       acceleration = "cuda";
     })
-#     (llama-cpp.override {
-#       cudaSupport = true;
-#     })
+    #     (llama-cpp.override {
+    #       cudaSupport = true;
+    #     })
   ];
 
   fonts.packages = with pkgs; [
-      nerd-fonts.jetbrains-mono
+    nerd-fonts.jetbrains-mono
   ];
 
   programs.java.enable = true;
@@ -150,14 +152,14 @@
       defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
     };
 
-#     docker = {
-#       enable = false;
-#
-#       rootless = {
-#         enable = true;
-#         setSocketVariable = true;
-#       };
-#     };
+    #     docker = {
+    #       enable = false;
+    #
+    #       rootless = {
+    #         enable = true;
+    #         setSocketVariable = true;
+    #       };
+    #     };
   };
 
   programs.nvf = {
@@ -185,7 +187,7 @@
 
   hardware.bluetooth.enable = true;
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = true;
 
   boot.loader.systemd-boot.configurationLimit = 10;
@@ -203,7 +205,6 @@
   # Refer to the following link for more details:
   # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
   nix.settings.auto-optimise-store = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -233,5 +234,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }

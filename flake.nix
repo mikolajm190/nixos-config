@@ -10,7 +10,12 @@
     nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nvf, ... }: {
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    nvf,
+    ...
+  }: {
     nixosConfigurations = {
       kdeciak = nixpkgs.lib.nixosSystem {
         modules = [

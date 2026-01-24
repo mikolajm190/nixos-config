@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "mikolajm";
   home.homeDirectory = "/home/mikolajm";
 
@@ -8,7 +10,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-
     # archives
     zip
     unzip
