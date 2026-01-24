@@ -124,6 +124,7 @@
     gcc
     python314
     podman-compose
+    nixd
     alejandra
 
     nordic
