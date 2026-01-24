@@ -94,9 +94,6 @@
       # zed-editor
       # tmux
 
-      # vimPlugins.LazyVim
-      # vimPlugins.vim-nix
-
       # audacity
       # inkscape
       gimp
@@ -163,13 +160,27 @@
 #     };
   };
 
-  programs.neovim = {
+  programs.nvf = {
     enable = true;
+    settings.vim = {
+      theme = {
+        enable = true;
+        name = "gruvbox";
+        style = "dark";
+      };
 
-    viAlias = true;
-    vimAlias = true;
+      statusline.lualine.enable = true;
+      telescope.enable = true;
+      autocomplete.nvim-cmp.enable = true;
 
-    defaultEditor = true;
+      lsp.enable = true;
+
+      languages = {
+        enableTreesitter = true;
+
+        nix.enable = true;
+      };
+    };
   };
 
   hardware.bluetooth.enable = true;

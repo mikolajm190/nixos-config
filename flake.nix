@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nvf.url = "github:notashelf/nvf";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nvf, ... }: {
     nixosConfigurations = {
       kdeciak = nixpkgs.lib.nixosSystem {
         modules = [
@@ -21,6 +22,8 @@
             home-manager.useUserPackages = true;
             home-manager.users.mikolajm = import ./home.nix;
           }
+
+          nvf.nixosModules.default
         ];
       };
     };
