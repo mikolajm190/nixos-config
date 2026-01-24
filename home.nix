@@ -88,6 +88,14 @@
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
+
+    profiles.default.extensions = with pkgs.vscode-extensions; [
+      vscodevim.vim
+      yzhang.markdown-all-in-one
+      jnoortheen.nix-ide
+      kamadorueda.alejandra
+      bradlc.vscode-tailwindcss
+    ];
   };
 
   # This value determines the home Manager release that your
