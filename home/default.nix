@@ -1,5 +1,7 @@
 {
   imports = [
-    # import all modules
+    ./modules/git.nix
+    ./modules/kitty.nix
+    ./modules/bash.nix
   ];
 }

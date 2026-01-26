@@ -1,5 +1,20 @@
 {
   imports = [
-    # import all modules
+    ./nixos/audio.nix
+    ./nixos/core.nix
+    ./nixos/desktop.nix
+    ./nixos/fonts.nix
+    ./nixos/graphics.nix
+    ./nixos/locale.nix
+    ./nixos/media.nix
+    ./nixos/networking.nix
+    ./nixos/nix-settings.nix
+    ./nixos/office.nix
+    ./nixos/packages.nix
+    ./nixos/theme.nix
+    ./nixos/users.nix
+    ./nixos/virtualisation.nix
+    ./nixos/dev
+    ./nixos/ai
   ];
 }
