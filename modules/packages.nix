@@ -10,6 +10,7 @@
 
     # archives
     zip
+    unzip
     xz
 
     # monitoring

@@ -1,4 +1,11 @@
 {
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+  };
+
   programs.nvf = {
     enable = true;
     settings.vim = {
