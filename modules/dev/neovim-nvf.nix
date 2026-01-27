@@ -25,6 +25,10 @@
         enableTreesitter = true;
 
         nix.enable = true;
+        clang.enable = true;
+        sql.enable = true;
+        bash.enable = true;
+        python.enable = true;
       };
     };
   };
