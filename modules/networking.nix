@@ -4,7 +4,8 @@
 
   programs.firefox.enable = true;
   environment.systemPackages = with pkgs; [
-    librewolf
+    # librewolf
+    # ladybird
   ];
 
   programs.ssh.startAgent = true;
