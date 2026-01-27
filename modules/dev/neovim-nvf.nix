@@ -30,6 +30,12 @@
         bash.enable = true;
         python.enable = true;
       };
+
+      options = {
+        autoindent = true;
+        shiftwidth = 2;
+        tabstop = 2;
+      };
     };
   };
 }
