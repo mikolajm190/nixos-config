@@ -19,6 +19,7 @@
     # security
     openssl
     gnupg
+    keepassxc
 
     # other
     jq
