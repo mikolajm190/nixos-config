@@ -14,6 +14,7 @@
     ./theme.nix
     ./users.nix
     ./virtualisation.nix
+    ./zen-browser.nix
     ./dev
     ./ai
   ];
