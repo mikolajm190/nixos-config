@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nvf.url = "github:notashelf/nvf";
   };
 
@@ -18,6 +22,8 @@
   }: {
     nixosConfigurations = {
       kdeciak = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+
         modules = [
           ./hosts/kdeciak/configuration.nix
 
