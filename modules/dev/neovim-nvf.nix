@@ -1,14 +1,14 @@
 {
-  programs.neovim = {
+  programs.vim = {
     enable = true;
-    viAlias = true;
-    vimAlias = true;
     defaultEditor = true;
   };
 
   programs.nvf = {
     enable = true;
     settings.vim = {
+      viAlias = true;
+      vimAlias = true;
       theme = {
         enable = true;
         name = "catppuccin";
@@ -26,16 +26,7 @@
 
         nix.enable = true;
         clang.enable = true;
-        bash.enable = true;
-        sql.enable = true;
-        python.enable = true;
-      };
-
-      options = {
-        autoindent = true;
-        shiftwidth = 2;
-        tabstop = 2;
-      };
+     };
     };
   };
 }
