@@ -11,8 +11,8 @@
     settings.vim = {
       theme = {
         enable = true;
-        name = "gruvbox";
-        style = "dark";
+        name = "catppuccin";
+        style = "macchiato";
       };
 
       statusline.lualine.enable = true;
@@ -26,8 +26,8 @@
 
         nix.enable = true;
         clang.enable = true;
-        sql.enable = true;
         bash.enable = true;
+        sql.enable = true;
         python.enable = true;
       };
 
