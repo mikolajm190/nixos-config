@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   users.users.mikolajm = {
     isNormalUser = true;
     description = "mikolajm";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       # user packages
     ];

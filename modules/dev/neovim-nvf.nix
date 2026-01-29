@@ -26,7 +26,7 @@
 
         nix.enable = true;
         clang.enable = true;
-     };
+      };
     };
   };
 }

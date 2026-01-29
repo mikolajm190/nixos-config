@@ -17,29 +17,31 @@
     };
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    home-manager,
-    nvf,
-    ...
-  }: {
-    nixosConfigurations = {
-      kdeciak = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      nvf,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        kdeciak = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
 
-        modules = [
-          ./hosts/kdeciak/configuration.nix
+          modules = [
+            ./hosts/kdeciak/configuration.nix
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.mikolajm = import ./hosts/kdeciak/home.nix;
-          }
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.mikolajm = import ./hosts/kdeciak/home.nix;
+            }
 
-          nvf.nixosModules.default
-        ];
+            nvf.nixosModules.default
+          ];
+        };
       };
     };
-  };
 }

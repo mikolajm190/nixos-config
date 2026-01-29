@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   extension = shortId: guid: {
     name = guid;
     value = {
@@ -25,17 +26,16 @@
     (extension "ublock-origin" "uBlock0@raymondhill.net")
     (extension "bitwarden-password-manager" "{446900e4-71c2-419f-a6a7-df9c091e268b}")
   ];
-in {
+in
+{
   environment.systemPackages = [
-    (
-      pkgs.wrapFirefox
+    (pkgs.wrapFirefox
       inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped
       {
         extraPrefs = lib.concatLines (
           lib.mapAttrsToList (
-            name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-          )
-          prefs
+            name: value: "lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});"
+          ) prefs
         );
 
         extraPolicies = {
