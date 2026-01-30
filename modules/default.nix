@@ -1,9 +1,12 @@
 {
   imports = [
+    ./ai
     ./audio.nix
     ./core.nix
     ./desktop.nix
+    ./dev
     ./fonts.nix
+    ./gaming
     ./graphics.nix
     ./locale.nix
     ./media.nix
@@ -15,7 +18,5 @@
     ./users.nix
     ./virtualisation.nix
     ./zen-browser.nix
-    ./dev
-    ./ai
   ];
 }
