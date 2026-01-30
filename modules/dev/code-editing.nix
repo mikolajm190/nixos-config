@@ -1,11 +1,30 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    kdePackages.kate
-    jetbrains.idea
-    vscode
-    # code-cursor
-    # zed-editor
-    # zellij
-  ];
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  cfg = config.code-editing;
+  codePkgs =
+    lib.optional cfg.idea.enable pkgs.jetbrains.idea
+    ++ lib.optional cfg.vscode.enable pkgs.vscode
+    ++ lib.optional cfg.cursor.enable pkgs.code-cursor
+    ++ lib.optional cfg.zed.enable pkgs.zed-editor
+    ++ lib.optional cfg.zellij.enable pkgs.zellij
+    ++ pkgs.kdePackages.kate;
+in
+{
+  options.code-editing = {
+    enable = lib.mkEnableOption "enable code editing module";
+    idea.enable = lib.mkEnableOption "enable intellij idea";
+    vscode.enable = lib.mkEnableOption "enable vscode";
+    cursor.enable = lib.mkEnableOption "enable cursor";
+    zed.enable = lib.mkEnableOption "enable zed";
+    zellij.enable = lib.mkEnableOption "enable zellij";
+  };
+
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = [ codePkgs ];
+  };
 }

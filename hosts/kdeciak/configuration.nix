@@ -9,6 +9,10 @@
     ../../modules
   ];
 
+  code-editing.enable = true;
+  code-editing.idea.enable = true;
+  code-editing.vscode.enable = true;
+
   _containers.enable = true;
   _containers.podman.enable = true;
 
