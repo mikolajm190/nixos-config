@@ -25,6 +25,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ codePkgs ];
+    environment.systemPackages = codePkgs;
   };
 }
