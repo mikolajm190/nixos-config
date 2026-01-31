@@ -25,6 +25,7 @@ in
           pkgs.vscode-extensions.jnoortheen.nix-ide
           pkgs.vscode-extensions.bradlc.vscode-tailwindcss
           pkgs.vscode-extensions.k--kato.intellij-idea-keybindings
+          pkgs.vscode-extensions.pkief.material-icon-theme
         ];
       };
       mutableExtensionsDir = true;
