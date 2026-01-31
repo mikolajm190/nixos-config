@@ -13,7 +13,7 @@ let
     ++ lib.optional cfg.zed.enable pkgs.zed-editor
     ++ lib.optional cfg.zellij.enable pkgs.zellij
     ++ lib.optional cfg.tmux.enable pkgs.tmux
-    ++ [ pkgs.kdePackages.kate ];
+    ++ lib.optional cfg.kate.enable pkgs.kdePackages.kate;
 in
 {
   options.code-editing = {
@@ -24,6 +24,7 @@ in
     zed.enable = lib.mkEnableOption "enable zed";
     zellij.enable = lib.mkEnableOption "enable zellij";
     tmux.enable = lib.mkEnableOption "enable tmux";
+    kate.enable = lib.mkEnableOption "enable kde kate";
   };
 
   config = lib.mkIf cfg.enable {
