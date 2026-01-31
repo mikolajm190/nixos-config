@@ -27,6 +27,6 @@ in
       enable = true;
     };
 
-    environment.systemPackages = [ gamingPkgs ];
+    environment.systemPackages = gamingPkgs;
   };
 }
