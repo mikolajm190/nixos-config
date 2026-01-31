@@ -13,7 +13,7 @@ let
     ++ lib.optional cfg.zed.enable pkgs.zed-editor
     ++ lib.optional cfg.zellij.enable pkgs.zellij
     ++ lib.optional cfg.tmux.enable pkgs.tmux
-    ++ pkgs.kdePackages.kate;
+    ++ [ pkgs.kdePackages.kate ];
 in
 {
   options.code-editing = {
