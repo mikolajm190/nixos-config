@@ -9,7 +9,7 @@ let
   driverPkgs =
     lib.optional cfg.nvidia.enable "nvidia"
     ++ lib.optional cfg.intel.enable "modesetting"
-    ++ cfg.amd.enable "amdgpu";
+    ++ lib.optional cfg.amd.enable "amdgpu";
 in
 {
   options.gpu = {
