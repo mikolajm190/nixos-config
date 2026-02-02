@@ -35,10 +35,10 @@ in
           setSocketVariable = true;
         };
       };
+
+      users.users.mikolajm.extraGroups = containerGroups;
+
+      environment.systemPackages = containerPkgs;
     };
-
-    users.users.mikolajm.extraGroups = containerGroups;
-
-    environment.systemPackages = containerPkgs;
   };
 }
