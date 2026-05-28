@@ -12,7 +12,8 @@
   _containers.podman.enable = true;
 
   gpu.enable = true;
-  gpu.nvidia.enable = true;
+  gpu.nvidia.enable = false;
+  gpu.intel.enable = true;
 
   ai.enable = false;
   ai.codex.enable = false;
