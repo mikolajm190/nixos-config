@@ -14,10 +14,8 @@
   gpu.enable = true;
   gpu.nvidia.enable = true;
 
-  ai.enable = true;
-  ai.ollama.enable = true;
-  ai.opencode.enable = true;
-  ai.codex.enable = true;
+  ai.enable = false;
+  ai.codex.enable = false;
 
   gaming.enable = false;
 
