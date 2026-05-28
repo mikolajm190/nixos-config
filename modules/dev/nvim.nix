@@ -4,29 +4,10 @@
     defaultEditor = true;
   };
 
-  programs.nvf = {
+  programs.neovim = {
     enable = true;
-    settings.vim = {
-      viAlias = true;
-      vimAlias = true;
-      theme = {
-        enable = true;
-        name = "catppuccin";
-        style = "mocha";
-      };
-
-      statusline.lualine.enable = true;
-      telescope.enable = true;
-      autocomplete.nvim-cmp.enable = true;
-
-      lsp.enable = true;
-
-      languages = {
-        enableTreesitter = true;
-
-        nix.enable = true;
-        clang.enable = true;
-      };
-    };
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
   };
 }
