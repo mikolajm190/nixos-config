@@ -9,7 +9,7 @@
     settings = {
       alias = {
         st = "status";
-        lo = "log --oneline";
+        lo = "log --oneline --graph --decorate";
       };
     };
   };
