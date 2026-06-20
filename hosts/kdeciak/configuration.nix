@@ -14,7 +14,7 @@
   gpu.nvidia.enable = false;
   gpu.intel.enable = true;
 
-  desktop.kde.enable = true;
+  desktop.kde.enable = false;
   desktop.hyprland.enable = true;
 
   ai.enable = false;
