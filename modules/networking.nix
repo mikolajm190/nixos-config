@@ -4,6 +4,7 @@
 }:
 {
   networking.hostName = "nixos";
+  networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
   programs.firefox.enable = false;
