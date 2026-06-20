@@ -41,6 +41,7 @@ in
       fuzzel
       brightnessctl
       networkmanagerapplet
+      nwg-displays
       playerctl
       pavucontrol
     ];
