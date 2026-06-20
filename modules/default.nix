@@ -8,6 +8,7 @@
     ./fonts.nix
     ./gaming
     ./graphics.nix
+    ./laptop.nix
     ./locale.nix
     ./media.nix
     ./networking.nix
