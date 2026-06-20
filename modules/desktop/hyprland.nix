@@ -36,10 +36,9 @@ in
 
     environment.systemPackages = with pkgs; [
       hyprpaper
-      hyprpicker
       hyprshot
       waybar
-      wofi
+      fuzzel
       brightnessctl
       networkmanagerapplet
       playerctl

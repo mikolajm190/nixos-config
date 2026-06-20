@@ -67,7 +67,7 @@ in
 
       $mod = SUPER
       $terminal = kitty
-      $menu = wofi --show drun
+      $menu = fuzzel
       $browser = zen
 
       bind = $mod, T, exec, $terminal
@@ -218,39 +218,29 @@ in
       }
     '';
 
-    xdg.configFile."wofi/config".text = ''
-      show=drun
-      prompt=
-      width=640
-      height=420
-      allow_images=true
-      insensitive=true
-    '';
+    xdg.configFile."fuzzel/fuzzel.ini".text = ''
+      font=JetBrainsMono Nerd Font:size=14
+      width=42
+      lines=12
+      tabs=4
+      horizontal-pad=18
+      vertical-pad=14
+      inner-pad=8
 
-    xdg.configFile."wofi/style.css".text = ''
-      window {
-        background-color: #24273a;
-        color: #cad3f5;
-        font-family: "JetBrainsMono Nerd Font";
-        font-size: 14px;
-      }
+      [colors]
+      background=121216cc
+      text=ffffffff
+      prompt=ffffffff
+      input=ffffffff
+      match=ffffffff
+      selection=ffffff2e
+      selection-text=ffffffff
+      selection-match=ffffffff
+      border=ffffff2e
 
-      #input {
-        margin: 8px;
-        padding: 8px;
-        border: 1px solid #8aadf4;
-        background-color: #1e2030;
-        color: #cad3f5;
-      }
-
-      #entry {
-        padding: 8px;
-      }
-
-      #entry:selected {
-        background-color: #8aadf4;
-        color: #181926;
-      }
+      [border]
+      width=1
+      radius=6
     '';
   };
 }
