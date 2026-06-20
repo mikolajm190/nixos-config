@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config._containers;
+  cfg = config.containerisation;
   containerGroups =
     lib.optional cfg.podman.enable "podman" ++ lib.optional cfg.docker.enable "docker";
   containerPkgs =
@@ -13,7 +13,7 @@ let
     ++ lib.optional cfg.docker.enable pkgs.docker-compose;
 in
 {
-  options._containers = {
+  options.containerisation = {
     enable = lib.mkEnableOption "enable containers module";
     podman.enable = lib.mkEnableOption "enable podman";
     docker.enable = lib.mkEnableOption "enable docker";
