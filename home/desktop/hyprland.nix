@@ -78,7 +78,7 @@ in
       bind = $mod, F, fullscreen
       bind = $mod, V, togglefloating
       bind = $mod, P, pseudo
-      bind = $mod, T, togglesplit
+      bind = $mod SHIFT, T, togglesplit
 
       bind = $mod, H, movefocus, l
       bind = $mod, L, movefocus, r
