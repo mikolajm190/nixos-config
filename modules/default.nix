@@ -3,7 +3,7 @@
     ./ai
     ./audio.nix
     ./core.nix
-    ./desktop.nix
+    ./desktop
     ./dev
     ./fonts.nix
     ./gaming
@@ -16,7 +16,7 @@
     ./packages.nix
     ./theme.nix
     ./users.nix
-    ./virtualisation.nix
+    ./virtualisation
     ./zen-browser.nix
   ];
 }
