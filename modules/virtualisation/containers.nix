@@ -2,9 +2,11 @@
   pkgs,
   lib,
   config,
+  myvars,
   ...
 }:
 let
+  username = myvars.hosts.nikslap.username;
   cfg = config.containerisation;
   containerGroups =
     lib.optional cfg.podman.enable "podman" ++ lib.optional cfg.docker.enable "docker";
@@ -37,7 +39,7 @@ in
       };
     };
 
-    users.users.mikolajm.extraGroups = containerGroups;
+    users.users.${username}.extraGroups = containerGroups;
 
     environment.systemPackages = containerPkgs;
   };

@@ -1,5 +1,11 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  myvars,
+  ...
+}:
 let
+  username = myvars.hosts.nikslap.username;
   cfg = config.vm;
 in
 {
@@ -13,6 +19,6 @@ in
       enableExtensionPack = true;
     };
 
-    users.users.mikolajm.extraGroups = [ "vboxusers" ];
+    users.users.${username}.extraGroups = [ "vboxusers" ];
   };
 }

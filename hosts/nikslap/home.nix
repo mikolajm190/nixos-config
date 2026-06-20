@@ -1,14 +1,19 @@
 {
   config,
   pkgs,
+  myvars,
   ...
-}: {
+}:
+let
+  username = myvars.hosts.nikslap.username;
+in
+{
   imports = [
     ../../home
   ];
 
-  home.username = "mikolajm";
-  home.homeDirectory = "/home/mikolajm";
+  home.username = username;
+  home.homeDirectory = "/home/${username}";
 
   home-desktop.hyprland.enable = true;
 

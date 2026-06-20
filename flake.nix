@@ -24,23 +24,27 @@
       nixpkgs,
       disko,
       home-manager,
-      nvf,
       ...
     }:
+    let
+      myvars = import ./vars;
+      username = myvars.hosts.nikslap.username;
+    in
     {
       nixosConfigurations = {
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+        nikslap = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs myvars; };
 
           modules = [
-            ./hosts/kdeciak/configuration.nix
-            ./hosts/kdeciak/disko.nix
+            ./hosts/nikslap/configuration.nix
+            ./hosts/nikslap/disko.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.mikolajm = import ./hosts/kdeciak/home.nix;
+              home-manager.extraSpecialArgs = { inherit myvars; };
+              home-manager.users.${username} = import ./hosts/nikslap/home.nix;
             }
 
             disko.nixosModules.disko

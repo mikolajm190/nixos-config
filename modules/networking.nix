@@ -1,9 +1,13 @@
 {
   pkgs,
+  myvars,
   ...
 }:
+let
+  hostname = myvars.hosts.nikslap.hostname;
+in
 {
-  networking.hostName = "nixos";
+  networking.hostName = hostname;
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 

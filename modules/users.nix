@@ -1,8 +1,15 @@
-{ pkgs, ... }:
 {
-  users.users.mikolajm = {
+  pkgs,
+  myvars,
+  ...
+}:
+let
+  username = myvars.hosts.nikslap.username;
+in
+{
+  users.users.${username} = {
     isNormalUser = true;
-    description = "mikolajm";
+    description = username;
     extraGroups = [
       "networkmanager"
       "wheel"
