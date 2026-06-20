@@ -29,7 +29,7 @@
     }:
     {
       nixosConfigurations = {
-        kdeciak = nixpkgs.lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
 
           modules = [
