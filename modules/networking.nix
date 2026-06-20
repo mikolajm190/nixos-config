@@ -6,7 +6,7 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
-  programs.firefox.enable = true;
+  programs.firefox.enable = false;
   environment.systemPackages = with pkgs; [
     # librewolf
     # ladybird
