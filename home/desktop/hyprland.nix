@@ -70,8 +70,8 @@ in
       $menu = wofi --show drun
       $browser = zen
 
-      bind = $mod, Return, exec, $terminal
-      bind = $mod, D, exec, $menu
+      bind = $mod, T, exec, $terminal
+      bind = $mod, S, exec, $menu
       bind = $mod, B, exec, $browser
       bind = $mod, Q, killactive
       bind = $mod SHIFT, M, exit
