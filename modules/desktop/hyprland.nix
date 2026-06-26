@@ -14,9 +14,21 @@ in
 
   config = lib.mkIf cfg.enable {
     services.xserver.enable = false;
-    services.displayManager.sddm = {
+
+    security.polkit.enable = true;
+
+    programs.regreet = {
       enable = true;
-      wayland.enable = true;
+
+      settings = {
+        GTK = {
+          application_prefer_dark_theme = true;
+          cursor_theme_name = "Bibata-Modern-Ice";
+          font_name = "JetBrainsMono Nerd Font 11";
+          icon_theme_name = "Papirus-Dark";
+          theme_name = "Nordic";
+        };
+      };
     };
 
     programs.hyprland = {
@@ -32,19 +44,5 @@ in
         xdg-desktop-portal-hyprland
       ];
     };
-
-    services.blueman.enable = true;
-
-    environment.systemPackages = with pkgs; [
-      hyprpaper
-      hyprshot
-      waybar
-      fuzzel
-      brightnessctl
-      networkmanagerapplet
-      nwg-displays
-      playerctl
-      pavucontrol
-    ];
   };
 }
