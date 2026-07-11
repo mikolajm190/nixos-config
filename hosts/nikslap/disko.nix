@@ -53,7 +53,7 @@
 
         lvs = {
           root = {
-            size = "200G";
+            size = "100G";
 
             content = {
               type = "filesystem";
