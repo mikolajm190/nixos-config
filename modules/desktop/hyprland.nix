@@ -23,10 +23,10 @@ in
       settings = {
         GTK = {
           application_prefer_dark_theme = true;
-          cursor_theme_name = "Bibata-Modern-Ice";
-          font_name = "JetBrainsMono Nerd Font 11";
-          icon_theme_name = "Papirus-Dark";
-          theme_name = "Nordic";
+          #cursor_theme_name = "Bibata-Modern-Ice";
+          #font_name = "JetBrainsMono Nerd Font 11";
+          #icon_theme_name = "Papirus-Dark";
+          #theme_name = "Nordic";
         };
       };
     };
