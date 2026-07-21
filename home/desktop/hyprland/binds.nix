@@ -9,12 +9,14 @@ in
       "$terminal" = "alacritty";
       "$menu" = "fuzzel";
       "$browser" = "zen";
+      "$fileManager" = "thunar";
       "$lock" = "hyprlock";
 
       bind = [
         "$mod, T, exec, $terminal"
         "$mod, S, exec, $menu"
         "$mod, B, exec, $browser"
+        "$mod, E, exec, $fileManager"
         "$mod, Q, killactive"
         "$mod SHIFT, M, exit"
         "$mod, Escape, exec, $lock"
