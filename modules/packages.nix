@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    foot
 
     # networking
     curl
@@ -27,6 +26,7 @@
     jq
     file
     tree
+    fastfetch
 
     pciutils
     usbutils
