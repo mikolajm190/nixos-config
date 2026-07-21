@@ -6,7 +6,7 @@ in
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {
       "$mod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "alacritty";
       "$menu" = "fuzzel";
       "$browser" = "zen";
       "$lock" = "hyprlock";

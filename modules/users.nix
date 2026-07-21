@@ -14,8 +14,10 @@ in
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.fish;
     packages = with pkgs; [
       # user packages
     ];
   };
+  programs.fish.enable = true;
 }
