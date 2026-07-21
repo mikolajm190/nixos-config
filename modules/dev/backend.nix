@@ -4,6 +4,6 @@
 
   environment.systemPackages = with pkgs; [
     gcc
-    python314
+    python3
   ];
 }
