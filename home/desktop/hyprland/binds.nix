@@ -22,8 +22,6 @@ in
         "$mod, Escape, exec, $lock"
         "$mod, F, fullscreen"
         "$mod, V, togglefloating"
-        "$mod, P, pseudo"
-        "$mod SHIFT, T, togglesplit"
         "$mod, C, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
         "$mod SHIFT, C, exec, cliphist wipe"
         "$mod, N, exec, makoctl dismiss"
