@@ -41,6 +41,7 @@ in
       polkit_gnome
       waybar
       wl-clipboard
+      thunar
     ];
 
     wayland.windowManager.hyprland = {
