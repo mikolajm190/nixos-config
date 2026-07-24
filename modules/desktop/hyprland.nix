@@ -40,5 +40,24 @@ in
         xdg-desktop-portal-hyprland
       ];
     };
+
+    environment.systemPackages = with pkgs; [
+      blueman
+      brightnessctl
+      cliphist
+      fuzzel
+      hypridle
+      hyprlock
+      hyprpaper
+      hyprshot
+      mako
+      networkmanagerapplet
+      nwg-displays
+      pavucontrol
+      playerctl
+      thunar
+      waybar
+      wl-clipboard
+    ];
   };
 }
