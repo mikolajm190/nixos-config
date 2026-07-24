@@ -1,5 +1,5 @@
 {
-  programs.zsh = {
+  programs.fish = {
     enable = true;
   };
 }
