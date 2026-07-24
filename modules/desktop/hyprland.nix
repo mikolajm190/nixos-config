@@ -13,10 +13,6 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    services.xserver.enable = false;
-
-    security.polkit.enable = true;
-
     programs.regreet = {
       enable = true;
 
