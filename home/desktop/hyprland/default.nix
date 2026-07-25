@@ -1,6 +1,5 @@
 {
   imports = [
-    ./binds.nix
     ./fuzzel.nix
     ./hypridle.nix
     ./hyprland.nix
