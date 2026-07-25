@@ -93,6 +93,12 @@ hl.bind(mainMod .. " + h",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + j",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + k",  hl.dsp.focus({ direction = "down" }))
 
+-- Move window with mainMod + arrow keys
+hl.bind(mainMod .. " + SHIFT + h",  hl.dsp.move_window({ direction = "left" }))
+-- hl.bind(mainMod .. " + SHIFT + l", hl.dsp.move_window({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + j",    hl.dsp.move_window({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + k",  hl.dsp.move_window({ direction = "down" }))
+
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + I",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + I", hl.dsp.window.move({ workspace = "special:magic" }))
