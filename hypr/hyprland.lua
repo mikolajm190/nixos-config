@@ -1,5 +1,19 @@
 
 hl.monitor({
+  output = "DP-1",
+  mode = "preferred",
+  position = "0x0",
+  scale = 1,
+})
+
+hl.monitor({
+	output = "HDMI-A-1",
+	mode = "preferred",
+	position = "1920x0",
+	scale = "1.5",
+})
+
+hl.monitor({
 	output = "",
 	mode = "preferred",
 	position = "auto",
@@ -9,6 +23,8 @@ hl.monitor({
 local terminal = "alacritty"
 local fileManager = "thunar"
 local menu = "fuzzel"
+local lock = "hyprlock"
+local browser = "zen"
 local mainMod = "SUPER"
 
 hl.on("hyprland.start", function ()
@@ -76,15 +92,31 @@ hl.gesture({
     action = "workspace"
 })
 
-hl.bind(mainMod .. "+ T", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. "+ Q", hl.dsp.window.close())
-hl.bind(mainMod .. "+ S", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. "+ E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + Q", hl.dsp.window.close())
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lock))
+
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exit())
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen("fullscreen", toggle))
+hl.bind(mainMod .. " + V", hl.dsp.window.float())
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(cliphist list | fuzzel --dmenu | cliphist decode | wl-copy))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd(cliphist wipe))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(makoctl dismiss))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(makoctl dismiss --all))
+
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd(hyprshot -m output))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd(hyprshot -m window))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(hyprshot -m region --clipboard-only))
+hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd(hyprshot -m output --clipboard-only))
+hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd(hyprshot -m window --clipboard-only))
 
 for i = 1, 10 do
 	local key = i % 10
-	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	hl.bind(mainMod .. " + " .. key,            hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key,    hl.dsp.window.move({ workspace = i }))
 end
 
 -- Move focus with mainMod + arrow keys
@@ -94,10 +126,10 @@ hl.bind(mainMod .. " + j",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + k",  hl.dsp.focus({ direction = "down" }))
 
 -- Move window with mainMod + arrow keys
-hl.bind(mainMod .. " + SHIFT + h",  hl.dsp.move_window({ direction = "left" }))
--- hl.bind(mainMod .. " + SHIFT + l", hl.dsp.move_window({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + j",    hl.dsp.move_window({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + k",  hl.dsp.move_window({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + h",      hl.dsp.window.move({ direction = "left" }))
+-- hl.bind(mainMod .. " + SHIFT + l",   hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + j",      hl.dsp.window.move({ direction = "up" }))
+hl.bind(mainMod .. " + SHIFT + k",      hl.dsp.window.move({ direction = "down" }))
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + I",         hl.dsp.workspace.toggle_special("magic"))
