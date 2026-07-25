@@ -59,5 +59,15 @@ in
       waybar
       wl-clipboard
     ];
+
+    environment.sessionVariables = {
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      HYPRCURSOR_THEME = "Bibata-Modern-Ice";
+      HYPRCURSOR_SIZE = "24";
+      XCURSOR_THEME = "Bibata-Modern-Classic";
+      XCURSOR_SIZE = "24";
+    };
   };
 }
