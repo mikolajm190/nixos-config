@@ -8,6 +8,7 @@
     ./fonts.nix
     ./gaming
     ./graphics.nix
+    ./kdeconnect.nix
     ./laptop.nix
     ./locale.nix
     ./media.nix
