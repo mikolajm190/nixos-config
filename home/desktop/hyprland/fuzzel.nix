@@ -4,29 +4,36 @@ let
 in
 {
   config = lib.mkIf cfg.enable {
-    xdg.configFile."fuzzel/fuzzel.ini".text = ''
-      font=JetBrainsMono Nerd Font:size=14
-      width=42
-      lines=12
-      tabs=4
-      horizontal-pad=18
-      vertical-pad=14
-      inner-pad=8
+    programs.fuzzel = {
+      enable = true;
+      settings = {
+        main = {
+          font = "Jetbrains Nerd Font:size=12";
+          width = 42;
+          lines = 12;
+          tabs = 4;
+          horizontal-pad = 18;
+          vertical-pad = 14;
+          inner-pad = 8;
+        };
 
-      [colors]
-      background=121216cc
-      text=ffffffff
-      prompt=ffffffff
-      input=ffffffff
-      match=ffffffff
-      selection=ffffff2e
-      selection-text=ffffffff
-      selection-match=ffffffff
-      border=ffffff2e
+        colors = {
+          background = "121216cc";
+          text = "ffffffff";
+          prompt = "ffffffff";
+          input = "ffffffff";
+          match = "ffffffff";
+          selection = "ffffff2e";
+          selection-text = "ffffffff";
+          selection-match = "ffffffff";
+          border = "ffffff2e";
+        };
 
-      [border]
-      width=1
-      radius=6
-    '';
+        border = {
+          width = 1;
+          radius = 6;
+        };
+      };
+    };
   };
 }
