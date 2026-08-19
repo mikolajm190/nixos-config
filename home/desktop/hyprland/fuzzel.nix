@@ -18,15 +18,15 @@ in
         };
 
         colors = {
-          background = "121216cc";
-          text = "ffffffff";
-          prompt = "ffffffff";
-          input = "ffffffff";
-          match = "ffffffff";
-          selection = "ffffff2e";
-          selection-text = "ffffffff";
-          selection-match = "ffffffff";
-          border = "ffffff2e";
+          background = "1e1e2eff";
+          text = "b4bfefff";
+          prompt = "b4bfefff";
+          input = "b4bfefff";
+          match = "b4bfefff";
+          selection = "b4bfef2e";
+          selection-text = "b4bfefff";
+          selection-match = "b4bfefff";
+          border = "89b4faff";
         };
 
         border = {
