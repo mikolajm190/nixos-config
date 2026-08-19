@@ -174,6 +174,10 @@ in
           color: @lavender;
         }
 
+        #bluetooth {
+          color: @lavender;
+        }
+
         #battery {
           color: @lavender;
           border-radius: 0 8px 8px 0;
