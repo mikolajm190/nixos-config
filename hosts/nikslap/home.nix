@@ -15,7 +15,7 @@ in
 
   home.shellAliases = {
     ll = "ls -la";
-    update = "nix flake update && sudo nixos-rebuild switch --flake .#nikslap";
+    update = "nix flake update && git add flake.lock && git commit -m \"system: package update\" && sudo nixos-rebuild switch --flake .#nikslap";
     rebuild = "sudo nixos-rebuild switch --flake .#nikslap";
   };
 

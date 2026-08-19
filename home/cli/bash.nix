@@ -3,10 +3,6 @@
     enable = true;
     enableCompletion = true;
 
-    shellAliases = {
-      ll = "ls -la";
-    };
-
     initExtra = ''
       # Define Colors
       COLOR_ORANGE='\[\033[38;5;208m\]'
