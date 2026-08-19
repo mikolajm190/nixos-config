@@ -165,17 +165,17 @@ in
         #pulseaudio {
           border-radius: 8px 0 0 8px;
           margin-left: 4px;
-          color: @maroon;
+          color: @lavender;
         }
 
         /* Internal joins — no radius */
         #network {
           border-radius: 0;
-          color: @blue;
+          color: @lavender;
         }
 
         #battery {
-          color: @red;
+          color: @lavender;
           border-radius: 0 8px 8px 0;
           margin-right: 4px;
         }
