@@ -17,8 +17,8 @@
 
   laptop.enable = true;
 
-  desktop.kde.enable = false;
-  desktop.hyprland.enable = true;
+  desktop.kde.enable = true;
+  desktop.hyprland.enable = false;
 
   ai.enable = true;
   ai.codex.enable = true;
