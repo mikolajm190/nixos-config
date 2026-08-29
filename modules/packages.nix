@@ -23,10 +23,11 @@
     keepassxc
 
     # other
-    jq
-    file
-    tree
     fastfetch
+    file
+    jq
+    stow
+    tree
 
     pciutils
     usbutils
