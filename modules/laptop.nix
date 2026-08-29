@@ -1,6 +1,7 @@
 { lib, config, ... }:
 let
   cfg = config.laptop;
+  isKdeEnabled = config.desktop.kde.enable;
 in
 {
   options.laptop = {
@@ -10,7 +11,7 @@ in
   config = lib.mkIf cfg.enable {
     powerManagement.enable = true;
 
-    services.tlp.enable = true;
+    services.tlp.enable = !isKdeEnabled;
     services.thermald.enable = true;
 
     services.logind.settings.Login = {
