@@ -4,8 +4,8 @@
   boot.loader.systemd-boot.configurationLimit = 10;
 
   services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+    layout = "pl";
+    variant = "qwerty";
   };
 
   hardware.bluetooth.enable = true;
