@@ -19,7 +19,7 @@ in
     rebuild = "sudo nixos-rebuild switch --flake .#nikslap";
   };
 
-  home-desktop.hyprland.enable = true;
+  home-desktop.hyprland.enable = false;
 
   fonts.fontconfig.enable = false;
 
