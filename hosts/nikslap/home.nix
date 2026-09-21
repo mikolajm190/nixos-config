@@ -1,9 +1,11 @@
 {
   myvars,
+  osConfig,
   ...
 }:
 let
   username = myvars.hosts.nikslap.username;
+  isHyprlandEnabled = osConfig.desktop.hyprland.enable;
 in
 {
   imports = [
@@ -19,7 +21,7 @@ in
     rebuild = "sudo nixos-rebuild switch --flake .#nikslap";
   };
 
-  home-desktop.hyprland.enable = false;
+  home-desktop.hyprland.enable = isHyprlandEnabled;
 
   fonts.fontconfig.enable = false;
 
